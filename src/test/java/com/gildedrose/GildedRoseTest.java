@@ -64,6 +64,22 @@ class GildedRoseTest {
         assertEquals(0, app.items[0].quality);
     }
 
+    @Test
+    void ConjuredItem() {
+        Item[] items = new Item[] { new Item("Conjured", 5, 10) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(8, app.items[0].quality);
+    }
+
+    @Test
+    void ConjuredPassedItem() {
+        Item[] items = new Item[] { new Item("Conjured", 0, 10) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(6, app.items[0].quality);
+    }
+
 
     @Test
     void qualityGreatThan50() {
