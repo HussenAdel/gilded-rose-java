@@ -10,6 +10,8 @@ public class GildedRoseFactory {
             return new SulfurasGildedRose(item);
         } else if (item.name.equals(ItemName.BACKSTAGE.name)) {
             return new BackStageGildedRose(item);
+        } else if (item.name.equals(ItemName.CONJURED.name)) {
+            return new ConjuredGildedRose(item);
         } else {
             return new DefaultGildedRose(item);
         }
