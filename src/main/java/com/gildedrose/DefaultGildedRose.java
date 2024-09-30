@@ -8,12 +8,10 @@ public class DefaultGildedRose extends MainGildedRose {
 
     @Override
     public void updateQuality() {
-        Item item =  super.getItem();
-        if (item.sellIn != 0)
-            super.DecreaseQuality(1);
+        if (super.getItem().sellIn != 0)
+            super.decreaseQuality(1);
         else
-            super.DecreaseQuality(2);
-        item.sellIn = item.sellIn - 1;
-        super.setItem(item);
+            super.decreaseQuality(2);
+        decreaseSellIn();
     }
 }

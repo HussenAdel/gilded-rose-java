@@ -15,16 +15,21 @@ public abstract class MainGildedRose {
     public void setItem(Item item) {
         this.item = item;
     }
-    public void IncreaseQuality(int increaseBy){
+    public void increaseQuality(int increaseBy){
         this.item.quality = this.item.quality + increaseBy;
         if (this.item.quality > 50)
             this.item.quality =  50;
     }
 
-    public void DecreaseQuality(int decreaseBy){
+    public void decreaseQuality(int decreaseBy){
             this.item.quality = this.item.quality - decreaseBy;
         if (this.item.quality < 0)
             this.item.quality = 0;
+    }
+
+    public void decreaseSellIn()
+    {
+        item.sellIn = item.sellIn - 1;
     }
 
 

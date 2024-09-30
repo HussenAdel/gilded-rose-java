@@ -8,12 +8,10 @@ public class ConjuredGildedRose extends MainGildedRose {
 
     @Override
     public void updateQuality() {
-        Item item =  super.getItem();
-        if (item.sellIn != 0)
-            super.DecreaseQuality(2);
+        if (super.getItem().sellIn != 0)
+            super.decreaseQuality(2);
         else
-            super.DecreaseQuality(4);
-        item.sellIn = item.sellIn - 1;
-        super.setItem(item);
+            super.decreaseQuality(4);
+        decreaseSellIn();
         }
 }

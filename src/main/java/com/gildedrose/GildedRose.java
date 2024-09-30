@@ -1,5 +1,7 @@
 package com.gildedrose;
 
+import java.util.Arrays;
+
 class GildedRose {
     Item[] items;
 
@@ -8,9 +10,6 @@ class GildedRose {
     }
 
     public void updateQuality() {
-        for (Item item : items) {
-            MainGildedRose mainGildedRose = GildedRoseFactory.createGildedRose(item);
-            mainGildedRose.updateQuality();
-        }
+        Arrays.stream(items).forEach(item -> {GildedRoseFactory.createGildedRose(item).updateQuality();});
     }
 }
